@@ -3,6 +3,10 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
+import adapter.Murcielago;
+import adapter.Rana;
+import adapter.StringArt;
+import adapter.StringArt2AsciiArt;
 import asciiart.AsciiArt;
 import asciiart.Cuadrado;
 import asciiart.DuplicaHorizontal;
@@ -63,6 +67,20 @@ public class Main {
 			dibuja(new Marco(new DuplicaHorizontal(cosa), '.'));
 			System.out.print("\n");
 		}
+		System.out.print("\n");
+		
+		
+		
+		//Animales adapter
+		System.out.println("Animales StringArt2AsciiArt Adapter:");
+		List<StringArt> animales = new ArrayList<>();
+		animales.add(new Rana());
+		animales.add(new Murcielago());
+		for (StringArt animal : animales) {
+			dibuja(new Marco(new StringArt2AsciiArt(animal), '#'));
+			System.out.print("\n");
+		}
+
 
 	}
 	
@@ -72,5 +90,7 @@ public class Main {
 			System.out.println(s);
 		}
 	}
+	
+	
 
 }
